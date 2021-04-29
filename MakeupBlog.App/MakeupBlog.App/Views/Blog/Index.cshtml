@@ -1,0 +1,112 @@
+﻿@model List<Article>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="wrap">
+
+  
+
+    <section class="site-section pt-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            <div class="row blog-entries">
+                <div class="col-md-12 col-lg-8 main-content">
+                    <div class="row mb-5 mt-5">
+
+                        <div class="col-md-12">
+                            @foreach (var item in Model)
+                            {
+                                <div class="post-entry-horzontal">
+                                    <a href="@Url.Action("BlogSingle", "Blog", new {id = item.Id })">
+                                        <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: Url(@Url.Content(item.ArticleImages[0].Path))"></div>
+                                        <span class="text">
+                                            <div class="post-meta">
+                                                <span class="author mr-2"><img src="~/Content/images/me.jpg" alt=""> Melike Kupen</span>&bullet;
+                                                
+                                            </div>
+                                            <h2>@item.Title</h2>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- END post -->
+                            }
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-12 text-center">
+                            <nav aria-label="Page navigation" class="text-center">
+                                <ul class="pagination">
+                                    <li class="page-item  active"><a class="page-link" href="#">&lt;</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- END main-content -->
+
+                <div class="col-md-12 col-lg-4 sidebar">
+                    <div class="sidebar-box search-form-wrap">
+                        <form action="#" class="search-form">
+                            <div class="form-group">
+                                <span class="icon fa fa-search"></span>
+                                <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+                            </div>
+                        </form>
+                    </div>
+                    <!-- END sidebar-box -->
+                    <div class="sidebar-box">
+                        <div class="bio text-center">
+                            <img src="~/Content/images/me.jpg" alt="Image Placeholder" class="img-fluid">
+                            <div class="bio-body">
+                                <h2>Melike Kupen</h2>
+                                <p>Henüz ben de bilmiyorum kim olduğumu tanıma aşamasındayım...</p>
+                                <p><a href="@Url.Action("Index", "About")" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                                <p class="social">
+                                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                                    <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+                                    <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END sidebar-box -->
+                    
+
+                   
+
+                </div>
+                <!-- END sidebar -->
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- END footer -->
+
+</div>
+
+<!-- loader -->
+<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214" /></svg></div>
+
+

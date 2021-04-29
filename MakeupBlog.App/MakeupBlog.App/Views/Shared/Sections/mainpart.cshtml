@@ -1,0 +1,99 @@
+﻿@model List<Article>
+<section class="site-section py-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="mb-4">Latest Posts</h2>
+            </div>
+        </div>
+        <div class="row blog-entries">
+            <div class="col-md-12 col-lg-8 main-content">
+               
+                <div class="row">
+
+
+                    @foreach (var a in Model)
+                    {
+                    <div class="col-md-6">
+                        <a href="@Url.Action("BlogSingle", "Blog", new {id = a.Id })" class="blog-entry element-animate" data-animate-effect="fadeIn">
+
+                            <img src="@Url.Content(a.ArticleImages[0].Path)" alt="Image placeholder">
+                            <div class="blog-content-body">
+                                <div class="post-meta">
+                                    <span class="author mr-2"><img src="~/Content/images/me.jpg" alt="Colorlib"> Melike Kupen</span>&bullet;
+
+                                </div>
+                                <h2>@a.Title</h2>
+                            </div>
+                        </a>
+                    </div>
+                            }
+                       
+
+
+
+                    </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-12 text-center">
+                        <nav aria-label="Page navigation" class="text-center">
+                            <ul class="pagination">
+                                <li class="page-item  active"><a class="page-link" href="#">&lt;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <!-- END main-content -->
+
+            <div class="col-md-12 col-lg-4 sidebar">
+                <div class="sidebar-box search-form-wrap">
+                    <form action="#" class="search-form">
+                        @*<div class="form-group">
+                                <span class="icon fa fa-search"></span>
+                                <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+                            </div>*@
+                    </form>
+                </div>
+                <!-- END sidebar-box -->
+                <div class="sidebar-box">
+                    <div class="bio text-center">
+                        <img src="~/Content/images/me.jpg" alt="Image Placeholder" class="img-fluid">
+                        <div class="bio-body">
+                            <h2>Melike Kupen</h2>
+                            <p>Henüz ben de bilmiyorum kim olduğumu tanıma aşamasındayım...</p>
+                            <p><a href="@Url.Action("Index", "About")" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                            <p class="social">
+
+                                <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+                                <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- END sidebar-box -->
+              
+
+                
+               
+
+            </div>
+           
+
+        </div>
+    </div>
+</section>
+
